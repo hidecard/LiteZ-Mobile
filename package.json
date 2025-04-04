@@ -1,11 +1,17 @@
 {
-    "name": "litez-project",
+    "name": "LiteZMobile",
     "version": "1.0.0",
-    "description": "A simple LiteZ framework test",
-    "main": "main.js",
     "scripts": {
-      "start": "node main.js"
+      "start": "react-native start",
+      "android": "react-native run-android"
     },
-    "author": "Your Name",
-    "license": "MIT"
+    "dependencies": {
+      "react": "18.2.0",
+      "react-native": "0.74.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.20.0",
+      "@babel/runtime": "^7.20.0",
+      "metro-react-native-babel-preset": "^0.77.0"
+    }
   }
