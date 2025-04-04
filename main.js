@@ -10,8 +10,8 @@ app("TodoApp", {
 
   ui: {
     heading: "title size=24",
-    list: "todos as 'pending' tap=toggleTodo",
-    list: "completed as 'done' tap=toggleTodo",
+    list: "todos as='pending' tap=toggleTodo",
+    list: "completed as='done' tap=toggleTodo",
     button: "'Add New Todo' tap=addTodo"
   },
 
@@ -33,8 +33,3 @@ app("TodoApp", {
 });
 
 start("TodoApp");
-
-// Optional: Test an action
-// const todoApp = LiteZ.apps["TodoApp"];
-// todoApp.trigger("addTodo"); // Adds "New Task"
-// todoApp.trigger("toggleTodo", "Learn LiteZ", 0, todoApp.data.todos); // Moves "Learn LiteZ" to completed
