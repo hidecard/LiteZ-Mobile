@@ -17,14 +17,13 @@ class LiteZ {
       });
     }
   
-    // Parse props string into an object
     parseProps(propsString) {
       const props = {};
       const parts = propsString.split(" ");
       props.value = parts[0].replace(/['"]/g, ""); // Remove quotes from value
       for (let i = 1; i < parts.length; i++) {
         const [key, value] = parts[i].split("=");
-        if (key && value) props[key] = value.replace(/['"]/g, ""); // Remove quotes
+        if (key && value) props[key] = value.replace(/['"]/g, "");
       }
       return props;
     }
@@ -33,11 +32,11 @@ class LiteZ {
       if (type === "heading") {
         const text = this.data[props.value] || props.value;
         console.log(`Heading: ${text} (size: ${props.size || "default"})`);
-      } else if (type === "list") {
+      } else if (type.includes("list")) { // Handle any key with "list" in it
         const listName = props.as || "list";
         const items = this.data[props.value] || [];
         console.log(`${listName}:`);
-        items.forEach((item, index) => {
+        items.forEach((item) => {
           const tapAction = props.tap ? this.actions[props.tap] : null;
           console.log(`- ${item} (tap: ${tapAction ? props.tap : "none"})`);
         });

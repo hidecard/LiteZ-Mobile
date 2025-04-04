@@ -10,8 +10,8 @@ app("TodoApp", {
 
   ui: {
     heading: "title size=24",
-    list: "todos as='pending' tap=toggleTodo",
-    list: "completed as='done' tap=toggleTodo",
+    pendingList: "todos as='pending' tap=toggleTodo",
+    doneList: "completed as='done' tap=toggleTodo",
     button: "'Add New Todo' tap=addTodo"
   },
 
